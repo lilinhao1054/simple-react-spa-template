@@ -2,8 +2,8 @@ import { useLocation } from "react-router-dom";
 import { useOutlet } from "react-router-dom";
 import { SwitchTransition, CSSTransition } from "react-transition-group";
 import { routes } from "@/router/router.jsx";
-import Header from "@/component/header.jsx";
-import Footer from "@/component/footer.jsx";
+import Header from "@/components/header.jsx";
+import Footer from "@/components/footer.jsx";
 
 const Layout = () => {
   const location = useLocation();

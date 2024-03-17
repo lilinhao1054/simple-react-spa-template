@@ -1,8 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
-import Layout from "@/layout";
+import Layout from "@/layouts";
 import { createRef } from "react";
-import Home from "@/page/home.jsx";
-import Setting from "@/page/setting.jsx";
+import Home from "@/pages/home.jsx";
+import Setting from "@/pages/setting.jsx";
 
 export const routes = [
   { path: "/", name: "Home", element: <Home />, nodeRef: createRef() },
