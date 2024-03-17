@@ -3,6 +3,8 @@ import Layout from "@/layouts";
 import { createRef } from "react";
 import Home from "@/pages/home.jsx";
 import Setting from "@/pages/setting.jsx";
+import Login from "@/pages/login.jsx";
+import Auth from "@/hocs/Auth";
 
 export const routes = [
   { path: "/", name: "Home", element: <Home />, nodeRef: createRef() },
@@ -17,11 +19,19 @@ export const routes = [
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <Layout />,
+    element: (
+      <Auth>
+        <Layout />
+      </Auth>
+    ),
     children: routes.map((route) => ({
       index: route.path === "/",
       path: route.path === "/" ? undefined : route.path,
       element: route.element,
     })),
+  },
+  {
+    path: "/login",
+    element: <Login />,
   },
 ]);
